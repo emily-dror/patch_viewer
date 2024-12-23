@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.split-container {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ccc;
+}
+
+.code-view {
+    flex: 1;
+    overflow-y: auto;
+    border: 1px solid #aaa;
+    white-space: pre-wrap;
+    background-color: #fff;
+}
+
+#left-view {
+    border-right: 1px solid #aaa;
+}
+
+pre {
+    margin: 0;
+    padding: 10px;
+}
+
+.added {
+    background-color: #d4fcdc;
+    color: #2e7d32;
+}
+
+.removed {
+    background-color: #ffe7e6;
+    color: #c62828;
+}
+
+.context {
+    background-color: #f4f4f4;
+}
+
+#file-list-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    max-height: 50px; /* Limit the height to fit 3 items (adjust as needed) */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.file-item {
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.file-item:hover {
+    background-color: #e0e0e0;
+}
+
+.file-item.active {
+    font-weight: bold;
+    background-color: #d4fcdc;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,54 @@
+commit 3be5f269e1bb0f63d48b28fd7da8e839173c6bf4
+Author: Peleg Rosen <prosen@apple.com>
+Date:   Sun Dec 22 09:07:36 2024 +0200
+
+    ProximaW: Minor comments updates
+    
+    rdar://137365189 (ProximaW: Update links when they are available in
+    ProximaW tree)
+    
+    Update a comment referring to a previously missing spec.
+    
+    Radar-Id-Partial: rdar://137365189
+    Change-Id: Iac1f11fd38d02fd28fd6a50228a9533fbf929a95
+
+diff --git a/bootios b/bootios
+index 98e03f868d3..f70fd2f61ba 100755
+--- a/bootios
++++ b/bootios
+@@ -752,10 +752,9 @@ def platform_proximaw(opts, platform):
+             "platform": "t2036",
+             "systemcfg": "proximaw.py",
+             "pmgr_device": "pd_nub.nub_aon.pmgr_aon.FUSE",
+-            # FIXME: rdar://137365189 (ProximaW: Update links when they are available in ProximaW tree)
+-            # https://seg-docs.csg.apple.com/projects/proxima/release/specs/Apple/Top/Boot/Proxima_Boot_Specification.pdf
+-            # Section 2.2.1. Boot Straps
+-            # force_dfu and dfu_select are not defined in Proxima
++            # https://seg-docs.csg.apple.com/projects/proximaw/release/specs/Apple/Top/Boot/Proximaw_Boot_Specification.pdf
++            # Section 2.3.1. Boot Straps
++            # force_dfu and dfu_select are not defined in ProximaW
+             "dfu_pin": None,
+             "no_gpu": True,
+             "no_ui": True,
+diff --git a/systemdefs/proximaw.py b/systemdefs/proximaw.py
+index 074a81501cb..e466acec695 100755
+--- a/systemdefs/proximaw.py
++++ b/systemdefs/proximaw.py
+@@ -3067,7 +3067,7 @@ def get_soc_class(opts):
+ 
+             self.get_subsystem_irqs()
+ 
+-            # Figure 6.23. Proxima-W Address Map
++            # Figure 6.23. ProximaW Address Map
+             # https://seg-docs.csg.apple.com/projects/proximaw/release/specs/Apple/Chip_Specification/Proximaw_Chip_Specification.pdf
+             self.subsystems_address_map = {
+                 "bt": self.devlist["BTIP"],
+@@ -3374,7 +3374,7 @@ def get_ccs_options(opts, devlist):
+                 "pmgr_aon_misc": "pd_nub.nub_aon.pmgr_aon.MINI_MISC",
+                 "no_tmm": True,
+                 "GID0": "0x28ba6c5ee72104bac1531b3a972239a55b0f9a1391656b8fe9d16473fd3b1663",
+-                # Reserved in Proxima
++                # Reserved in ProximaW
+                 "GID1": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                 "GID3": "0x41d765fa9d121a62e272bff0595562dca17a116ae3fca430fab290b20d063173",
+                 "sep_fuse_uid": "pd_nub.otp_ctrl",

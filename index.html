@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Patch Viewer</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Patch Viewer</h1>
+        <input type="file" id="upload" accept=".patch" />
+        <div id="file-list-container"></div>
+        <div class="split-container">
+            <div class="code-view" id="left-view">
+                <pre id="old-code"></pre>
+            </div>
+            <div class="code-view" id="right-view">
+                <pre id="new-code"></pre>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
+
