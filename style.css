@@ -7,7 +7,37 @@ h1 {
     text-align: center;
 }
 
+/* Style the file input container */
+input[type="file"] {
+    display: none; /* Hide the default input */
+}
+
+/* Create a custom file upload button */
+.file-upload-label {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.file-upload-label:hover {
+    background-color: #0056b3;
+}
+
+/* Style the text next to the file button */
+.file-name {
+    font-size: 1rem;
+    color: #555;
+    margin-left: 10px;
+}
+
 .split-container {
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     border: 1px solid #ccc;
@@ -46,11 +76,10 @@ pre {
 
 #file-list-container {
     margin-top: 20px;
-    padding: 10px;
+    padding: 2px;
     border: 1px solid #ccc;
     background-color: #f0f0f0;
-    max-height: 50px; /* Limit the height to fit 3 items (adjust as needed) */
-    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-y: auto;
 }
 
 .file-item {
@@ -60,7 +89,9 @@ pre {
 }
 
 .file-item:hover {
-    background-color: #e0e0e0;
+  color: blue;
+  text-decoration: underline;
+  background-color: #e0e0e0;
 }
 
 .file-item.active {
@@ -69,5 +100,46 @@ pre {
 }
 
 .hidden {
+    display: grid;
+}
+
+
+.tabs {
+    display: flex;
+    width: 100%;
+    border-bottom: 2px solid #ddd;
+  margin-top: 20px;
+}
+
+/* Make each tab button take equal space */
+.tab-button {
+    flex: 1;  /* Distributes width equally */
+    background: #f1f1f1;
+    border: none;
+    padding: 15px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+}
+
+/* Active tab styling */
+.tab-button.active {
+    background: #007bff;
+    color: white;
+}
+
+/* Ensures tab content does not interfere */
+.tab-content {
     display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 0 0 5px 5px;
+}
+
+/* Show active content */
+.tab-content.active {
+    display: block;
 }

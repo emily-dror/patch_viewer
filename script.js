@@ -1,4 +1,4 @@
-document.getElementById("upload").addEventListener("change", handleFile);
+document.getElementById("file-upload").addEventListener("change", handleFile);
 
 let currentIndex = -1; // Track the currently selected file index
 let files = []; // Store parsed files globally
@@ -131,3 +131,21 @@ document.addEventListener("keydown", (event) => {
         }
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll(".tab-button");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            // Remove active class from all tabs and contents
+            tabs.forEach(t => t.classList.remove("active"));
+            tabContents.forEach(tc => tc.classList.remove("active"));
+
+            // Add active class to clicked tab and corresponding content
+            tab.classList.add("active");
+            document.getElementById(tab.dataset.tab).classList.add("active");
+        });
+    });
+});
+

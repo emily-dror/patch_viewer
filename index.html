@@ -8,16 +8,39 @@
     </head>
     <body>
         <h1>Patch Viewer</h1>
-        <input type="file" id="upload" accept=".patch" />
-        <div id="file-list-container"></div>
-        <div class="split-container">
-            <div class="code-view" id="left-view">
-                <pre id="old-code"></pre>
-            </div>
-            <div class="code-view" id="right-view">
-                <pre id="new-code"></pre>
-            </div>
+
+        <label for="file-upload" class="file-upload-label">Choose File</label>
+        <input type="file" id="file-upload" accept=".patch"/>
+        <span class="file-name">No file selected</span>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="summary">Summary</button>
+            <button class="tab-button" data-tab="changes">Changes</button>
+            <button class="tab-button" data-tab="stats">Stats</button>
         </div>
+
+        <div class="tab-content active" id="summary">
+            <p>Patch summary will appear here...</p>
+        </div>
+
+        <div class="tab-content" id="changes">
+            <div id="file-list-container"></div>
+
+            <div class="split-container">
+                <div class="code-view" id="left-view">
+                    <pre id="old-code"></pre>
+                </div>
+                <div class="code-view" id="right-view">
+                    <pre id="new-code"></pre>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="tab-content" id="stats">
+            <p>Statistics about the patch will appear here...</p>
+        </div>
+
         <script src="script.js"></script>
     </body>
 </html>
